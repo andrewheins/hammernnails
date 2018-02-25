@@ -15,6 +15,7 @@
 # Feel free to add new variables to customise your setup.
 
 set :deploy_to, '/var/www/html/'
+set :repository, "git@github.com:andrewheins/hammernnails.git"
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
