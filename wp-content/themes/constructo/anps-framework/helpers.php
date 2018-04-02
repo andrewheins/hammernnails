@@ -844,17 +844,17 @@ if(!function_exists('anps_get_logo')) {
         }
 
         if(isset($page_heading_full) && $page_heading_full=="on" && isset($full_screen_logo) && $full_screen_logo!="0") : ?>
-            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="Site logo" src="<?php echo esc_url($full_screen_logo); ?>">
+            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="<?= bloginfo('name') ?>" src="<?php echo esc_url($full_screen_logo); ?>">
         <?php else :
         if(($menu_type==1 || $menu_type==3) && $first_page_logo && (is_front_page())) : ?>
-            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="Site logo" src="<?php echo esc_url($first_page_logo); ?>">
+            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="<?= bloginfo('name') ?>" src="<?php echo esc_url($first_page_logo); ?>">
         <?php
         elseif (anps_get_option($anps_media_data, 'logo') != '') : ?>
-            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="Site logo" src="<?php echo esc_url(anps_get_option($anps_media_data, 'logo')); ?>">
+            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="<?= bloginfo('name') ?>" src="<?php echo esc_url(anps_get_option($anps_media_data, 'logo')); ?>">
         <?php elseif(isset($text_logo) && $text_logo!='') : ?>
             <?php echo str_replace('\\"', '"', $text_logo); ?></a>
         <?php else: ?>
-            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="Site logo" src="http://anpsthemes.com/constructo/wp-content/uploads/2014/12/constructo-logoV4.png">
+            <img style="width: <?php echo esc_attr($logo_width); ?>; height: <?php echo esc_attr($logo_height); ?>px" alt="<?= bloginfo('name') ?>" src="http://anpsthemes.com/constructo/wp-content/uploads/2014/12/constructo-logoV4.png">
         <?php endif;
         endif;
         echo '</a>';
